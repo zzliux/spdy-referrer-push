@@ -53,7 +53,9 @@ var spdyPush = require('spdy-referrer-push')
   , fs = require('fs');
 
 var app = express();
-app.use(spdyPush.referrer());
+app.use(spdyPush.referrer({
+    staticPath: 'public' //static folder path
+}));
 var options = {
   plain: true,
   ssl: false
